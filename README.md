@@ -4,6 +4,25 @@
 AlphaMon is an IoT, edge-based data collection and forwarding system optimised for enterprise-grade Energy Demand Management and similar applications.
 The AlphaMon's hardware is based on cost effective, dual-core ESP32-S3 processors and firmware that bridges grid and renewable energy assets (inverters, batteries, smart meters) to local automation hubs such as Home Assistant, via USB Serial ports, WiFi, MQTT message brokers and long-range (LoRa) wireless MESH networks for least-cost, last-mile telemetry where WiFi or WAN connectivity isn't readily available.
 
+Solargy has developed a demonstration 95mm x 95mm PCB which hosts a Heltec ESP32 LoRa V3 sub-board which runs The AlphaMon Platform firmware. The current PCB design includes the following features:
+- **An independent 12V power supply**: Allows the PCB to be powered from a standard wall socket plug-pack power supply. 
+- **An RJ-45 Modbus socket**: Allows quick and easy connections to many inverters and energy storage systems.
+- **An RS-485 module**: Which implements the Modbus communication and electrical standards.
+- **A microSD Card sub-board**: The optional microSD card can simplify loading and testing configuration and device definitions (DDFs).
+- **A voltage controlled relay driver**: Which allows the AlphaMon to switch external electrical loads via a Solid State Relay (SSR).
+
+###Open Architecture
+AlphaMon is an Open Architecture Platform that allows software developers, hardware designers and end-users to join the AlphaMon ecosystem.
+Whilst we don't share the underlying firmware for security reasons, we do attempt to make it as easy as possible for any interested parties to participate in and enhance the platform offerings, including custom devices based on the AlphaMon's features and services.
+You can read more about The AlphaMon Platform on our official website at https://AlphaMon.net
+
+Whilst the firmware is currently tied to the Heltec ESP32 LoRa V3 sub-board we expect to support other OEM ESP32 sub-boards in the near future.
+Unlike many SaaS offerings, it is the ESP32 sub-board that joins the AlphaMon ecosystem. Each registered ESP32 receives automatic firmware updates via the built-in Over-The-Air (OTA) update service; much like your cell phone's automatic update service.
+
+If you have an existing Heltec ESP32 LoRa V3 sub-board you can register it in The AlphaMon Platform ecosystem for as little as US$50 per device, for a lifetime subscription.  Contact us for other options, clearly stating your preferences, volumes and other requirements for a quotation.
+The offical Heltec website for the ESP32 board is here: https://heltec.org/project/wifi-lora-32-v3/
+
+
 ### Core Software Services
 See https://alphamon.net/home/services/ for a more detailed description of the following services:
 - **Configuration File Manager**: Synchronises, reads and writes Config File updates, containing the user-defined preferences such as WiFi SSID and credentials, international time zone, LoRa settings, logging and debugging settings, etc.
