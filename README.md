@@ -4,7 +4,8 @@
 AlphaMon is an IoT, edge-based data collection and forwarding system optimised for enterprise-grade Energy Demand Management and similar applications.
 The AlphaMon's hardware is based on cost effective, dual-core ESP32-S3 processors and firmware that bridges grid and renewable energy assets (inverters, batteries, smart meters) to local automation hubs such as Home Assistant, via USB Serial ports, WiFi, MQTT message brokers and long-range (LoRa) wireless MESH networks for least-cost, last-mile telemetry where WiFi or WAN connectivity isn't readily available.
 
-Solargy has developed a demonstration 95mm x 95mm PCB which hosts a Heltec ESP32 LoRa V3 sub-board which runs The AlphaMon Platform firmware. The current PCB design includes the following features:
+Solargy has developed a demonstration 95mm x 95mm PCB which hosts a Heltec ESP32 LoRa V3 sub-board which runs The AlphaMon Platform firmware. It has been designed to fit into a standard 108mm (L) x 108mm (W) x 75mm (H) IP67-rated electrical enclosure for outdoor mounting. We've also designed proof-of-concept, 3D printed enclosures for indoor mounting.
+The current PCB design includes the following features:
 - **An independent 12V power supply**: Allows the PCB to be powered from a standard wall socket plug-pack power supply. 
 - **An RJ-45 Modbus socket**: Allows quick and easy connections to many inverters and energy storage systems.
 - **An RS-485 module**: Which implements the Modbus communication and electrical standards.
