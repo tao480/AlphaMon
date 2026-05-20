@@ -39,3 +39,4 @@ See https://alphamon.net/home/services/ for a more detailed description of the f
 ## Infrastructure Directory Structure
 - `/assets/devices/DDFs`: Hosts current versions of supported Device Definition File (DDF) assets.
 - `/src`: Source code and utilities which may assist in managing AlphaMon devices and networks.
+- `/configs`: Information on Configuration File settings and Config File management.
