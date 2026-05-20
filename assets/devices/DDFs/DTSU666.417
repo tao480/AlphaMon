@@ -1,0 +1,26 @@
+{
+  "slug": "DTSU666",
+  "ver": "4.17",
+  "rev": "4",
+  "patch": "0",
+  "device": {"cClass": "M", "eType": 0, "cUserName": "Chint DTSU666", "cMake": "Chint", "cModel": "DTSU666", "cAlias": "DTSU666", "cSerialNo": "", "ui8SlaveId": 1, "ui16Baud": 9600, "ui16TTL_Secs": 0, "ui32MaxSolar": 0, "ui32MaxUps": 0, "ui32MaxGrid": 69000, "ui32LoRaSecs": 0, "ui32MqttSecs": 0},
+  "registers": 
+    [
+    {"ui16Addr": "0x101E", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 3600, "ui32SecsLoRa": 86400, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "kWh", "ui8RegMap": 160, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "TotalEnergy", "stName": "Positive Total Active Energy", "stGroup": "SYSTEM"},
+    {"ui16Addr": "0x1510", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 1, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "V", "ui8RegMap": 2, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsA", "stName": "Phase A Voltage", "stGroup": "GRID"},
+    {"ui16Addr": "0x1516", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 1, "ui8Decimals": 3, "fMultiplier": 1.0, "cUoM": "A", "ui8RegMap": 6, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridAmpsA", "stName": "Phase A Current", "stGroup": "GRID"},
+    {"ui16Addr": "0x151C", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 1, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 2, "ui8Decimals": 3, "fMultiplier": 1.0, "cUoM": "kW", "ui8RegMap": 9, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridWattsT", "stName": "Combined Active Power", "stGroup": "GRID"},
+    {"ui16Addr": "0x154E", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "Hz", "ui8RegMap": 1, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridFreq", "stName": "Frequency", "stGroup": "GRID"}
+    ],
+  "messages": 
+    [
+    
+    ],
+  "HA": [
+  "homeassistant/sensor/DTSU666/TotalEnergy/config|{`name`: `DTSU666 Positive Total Active Energy`, `uniq_id`: `am_DTSU666_TotalEnergy`, `stat_t`: `$MQTT_ROOT$DTSU666/state`, `unit_of_meas`: `kWh`, `dev_cla`: `energy`, `stat_cla`: `total_increasing`, `val_tpl`: `{{ value_json.TotalEnergy }}`, `dev`: {`ids`: [`DTSU666`], `name`: `Chint DTSU666`, `mdl`: `DTSU666`, `mf`: `Chint`}}",
+  "homeassistant/sensor/DTSU666/GridVoltsA/config|{`name`: `DTSU666 Phase A Voltage`, `uniq_id`: `am_DTSU666_GridVoltsA`, `stat_t`: `$MQTT_ROOT$DTSU666/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsA }}`, `dev`: {`ids`: [`DTSU666`], `name`: `Chint DTSU666`, `mdl`: `DTSU666`, `mf`: `Chint`}}",
+  "homeassistant/sensor/DTSU666/GridAmpsA/config|{`name`: `DTSU666 Phase A Current`, `uniq_id`: `am_DTSU666_GridAmpsA`, `stat_t`: `$MQTT_ROOT$DTSU666/state`, `unit_of_meas`: `A`, `dev_cla`: `current`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridAmpsA }}`, `dev`: {`ids`: [`DTSU666`], `name`: `Chint DTSU666`, `mdl`: `DTSU666`, `mf`: `Chint`}}",
+  "homeassistant/sensor/DTSU666/GridWattsT/config|{`name`: `DTSU666 Combined Active Power`, `uniq_id`: `am_DTSU666_GridWattsT`, `stat_t`: `$MQTT_ROOT$DTSU666/state`, `unit_of_meas`: `W`, `dev_cla`: `power`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridWattsT }}`, `dev`: {`ids`: [`DTSU666`], `name`: `Chint DTSU666`, `mdl`: `DTSU666`, `mf`: `Chint`}}",
+  "homeassistant/sensor/DTSU666/GridFreq/config|{`name`: `DTSU666 Frequency`, `uniq_id`: `am_DTSU666_GridFreq`, `stat_t`: `$MQTT_ROOT$DTSU666/state`, `unit_of_meas`: `Hz`, `dev_cla`: `frequency`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridFreq }}`, `dev`: {`ids`: [`DTSU666`], `name`: `Chint DTSU666`, `mdl`: `DTSU666`, `mf`: `Chint`}}"
+]
+}

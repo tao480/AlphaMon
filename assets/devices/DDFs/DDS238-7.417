@@ -1,0 +1,30 @@
+{
+  "slug": "DDS238-7",
+  "ver": "4.17",
+  "rev": "4",
+  "patch": "0",
+  "device": {"cClass": "M", "eType": 0, "cUserName": "SinoTimer DDS238-7", "cMake": "SinoTimer", "cModel": "DDS238-7", "cAlias": "DDS2387", "cSerialNo": "", "ui8SlaveId": 1, "ui16Baud": 9600, "ui16TTL_Secs": 0, "ui32MaxSolar": 0, "ui32MaxUps": 0, "ui32MaxGrid": 0, "ui32LoRaSecs": 0, "ui32MqttSecs": 0},
+  "registers": 
+    [
+    {"ui16Addr": "0x0000", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "V", "ui8RegMap": 2, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsA", "stName": "A phase voltage", "stGroup": ""},
+    {"ui16Addr": "0x0002", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "V", "ui8RegMap": 3, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsB", "stName": "B phase voltage", "stGroup": ""},
+    {"ui16Addr": "0x0004", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "V", "ui8RegMap": 4, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsC", "stName": "C phase voltage", "stGroup": ""},
+    {"ui16Addr": "0x0008", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "A", "ui8RegMap": 6, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridAmpsA", "stName": "A line current", "stGroup": ""},
+    {"ui16Addr": "0x0010", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 1, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 2, "ui8Decimals": 3, "fMultiplier": 1000.0, "cUoM": "W", "ui8RegMap": 9, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridWattsA", "stName": "Total active power", "stGroup": ""},
+    {"ui16Addr": "0x0036", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "Hz", "ui8RegMap": 1, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridFreq", "stName": "frequency", "stGroup": ""},
+    {"ui16Addr": "0x0100", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 3600, "ui32SecsLoRa": 86400, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "kWh", "ui8RegMap": 160, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "TotalEnergy", "stName": "Total active electricity power", "stGroup": ""}
+    ],
+  "messages": 
+    [
+    
+    ],
+  "HA": [
+  "homeassistant/sensor/DDS238-7/GridVoltsA/config|{`name`: `DDS238-7 A phase voltage`, `uniq_id`: `am_DDS238-7_GridVoltsA`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsA }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}",
+  "homeassistant/sensor/DDS238-7/GridVoltsB/config|{`name`: `DDS238-7 B phase voltage`, `uniq_id`: `am_DDS238-7_GridVoltsB`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsB }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}",
+  "homeassistant/sensor/DDS238-7/GridVoltsC/config|{`name`: `DDS238-7 C phase voltage`, `uniq_id`: `am_DDS238-7_GridVoltsC`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsC }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}",
+  "homeassistant/sensor/DDS238-7/GridAmpsA/config|{`name`: `DDS238-7 A line current`, `uniq_id`: `am_DDS238-7_GridAmpsA`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `A`, `dev_cla`: `current`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridAmpsA }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}",
+  "homeassistant/sensor/DDS238-7/GridWattsA/config|{`name`: `DDS238-7 Total active power`, `uniq_id`: `am_DDS238-7_GridWattsA`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `W`, `dev_cla`: `power`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridWattsA }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}",
+  "homeassistant/sensor/DDS238-7/GridFreq/config|{`name`: `DDS238-7 frequency`, `uniq_id`: `am_DDS238-7_GridFreq`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `Hz`, `dev_cla`: `frequency`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridFreq }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}",
+  "homeassistant/sensor/DDS238-7/TotalEnergy/config|{`name`: `DDS238-7 Total active electricity power`, `uniq_id`: `am_DDS238-7_TotalEnergy`, `stat_t`: `$MQTT_ROOT$DDS238-7/state`, `unit_of_meas`: `kWh`, `dev_cla`: `energy`, `stat_cla`: `total_increasing`, `val_tpl`: `{{ value_json.TotalEnergy }}`, `dev`: {`ids`: [`DDS238-7`], `name`: `SinoTimer DDS238-7`, `mdl`: `DDS238-7`, `mf`: `SinoTimer`}}"
+]
+}

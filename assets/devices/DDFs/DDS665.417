@@ -1,0 +1,29 @@
+{
+  "slug": "DDS665",
+  "ver": "4.17",
+  "rev": "4",
+  "patch": "0",
+  "device": {"cClass": "M", "eType": 0, "cUserName": "Eastron DDS665", "cMake": "Eastron", "cModel": "DDS665", "cAlias": "DDS665", "cSerialNo": "", "ui8SlaveId": 1, "ui16Baud": 9600, "ui16TTL_Secs": 0, "ui32MaxSolar": 0, "ui32MaxUps": 0, "ui32MaxGrid": 23000, "ui32LoRaSecs": 0, "ui32MqttSecs": 0},
+  "registers": 
+    [
+    {"ui16Addr": "0x0000", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "V", "ui8RegMap": 2, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsA", "stName": "Voltage", "stGroup": "GRID"},
+    {"ui16Addr": "0x0008", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 3, "fMultiplier": 1.0, "cUoM": "A", "ui8RegMap": 6, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridAmpsA", "stName": "Current", "stGroup": "GRID"},
+    {"ui16Addr": "0x0012", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 2, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "W", "ui8RegMap": 9, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridWattsA", "stName": "Active Power", "stGroup": "GRID"},
+    {"ui16Addr": "0x001A", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 2, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "Var", "ui8RegMap": 0, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "ReacPower", "stName": "Reactive Power", "stGroup": "GRID"},
+    {"ui16Addr": "0x0022", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 1, "ui8Decimals": 1, "fMultiplier": 1.0, "cUoM": "VA", "ui8RegMap": 0, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "ApparPower", "stName": "Apparent Power", "stGroup": "GRID"},
+    {"ui16Addr": "0x002A", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 1, "ui8Decimals": 3, "fMultiplier": 1.0, "cUoM": "", "ui8RegMap": 0, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "PowerFactor", "stName": "Power Factor", "stGroup": "GRID"},
+    {"ui16Addr": "0x0036", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "Hz", "ui8RegMap": 1, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridFreq", "stName": "Frequency", "stGroup": "GRID"},
+    {"ui16Addr": "0x0100", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 3600, "ui32SecsLoRa": 86400, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "kWh", "ui8RegMap": 162, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "TotalEnergy", "stName": "Total Active Energy", "stGroup": "SYSTEM"}
+    ],
+  "messages": 
+    [
+    
+    ],
+  "HA": [
+  "homeassistant/sensor/DDS665/GridVoltsA/config|{`name`: `DDS665 Voltage`, `uniq_id`: `am_DDS665_GridVoltsA`, `stat_t`: `$MQTT_ROOT$DDS665/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsA }}`, `dev`: {`ids`: [`DDS665`], `name`: `Eastron DDS665`, `mdl`: `DDS665`, `mf`: `Eastron`}}",
+  "homeassistant/sensor/DDS665/GridAmpsA/config|{`name`: `DDS665 Current`, `uniq_id`: `am_DDS665_GridAmpsA`, `stat_t`: `$MQTT_ROOT$DDS665/state`, `unit_of_meas`: `A`, `dev_cla`: `current`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridAmpsA }}`, `dev`: {`ids`: [`DDS665`], `name`: `Eastron DDS665`, `mdl`: `DDS665`, `mf`: `Eastron`}}",
+  "homeassistant/sensor/DDS665/GridWattsA/config|{`name`: `DDS665 Active Power`, `uniq_id`: `am_DDS665_GridWattsA`, `stat_t`: `$MQTT_ROOT$DDS665/state`, `unit_of_meas`: `W`, `dev_cla`: `power`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridWattsA }}`, `dev`: {`ids`: [`DDS665`], `name`: `Eastron DDS665`, `mdl`: `DDS665`, `mf`: `Eastron`}}",
+  "homeassistant/sensor/DDS665/GridFreq/config|{`name`: `DDS665 Frequency`, `uniq_id`: `am_DDS665_GridFreq`, `stat_t`: `$MQTT_ROOT$DDS665/state`, `unit_of_meas`: `Hz`, `dev_cla`: `frequency`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridFreq }}`, `dev`: {`ids`: [`DDS665`], `name`: `Eastron DDS665`, `mdl`: `DDS665`, `mf`: `Eastron`}}",
+  "homeassistant/sensor/DDS665/TotalEnergy/config|{`name`: `DDS665 Total Active Energy`, `uniq_id`: `am_DDS665_TotalEnergy`, `stat_t`: `$MQTT_ROOT$DDS665/state`, `unit_of_meas`: `kWh`, `dev_cla`: `energy`, `stat_cla`: `total_increasing`, `val_tpl`: `{{ value_json.TotalEnergy }}`, `dev`: {`ids`: [`DDS665`], `name`: `Eastron DDS665`, `mdl`: `DDS665`, `mf`: `Eastron`}}"
+]
+}

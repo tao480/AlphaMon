@@ -1,0 +1,26 @@
+{
+  "slug": "ACR10R-D",
+  "ver": "4.17",
+  "rev": "4",
+  "patch": "0",
+  "device": {"cClass": "M", "eType": 0, "cUserName": "Acrel ACR10R-D", "cMake": "Acrel", "cModel": "ACR10R-D", "cAlias": "ACR10R", "cSerialNo": "", "ui8SlaveId": 1, "ui16Baud": 9600, "ui16TTL_Secs": 0, "ui32MaxSolar": 0, "ui32MaxUps": 0, "ui32MaxGrid": 18400, "ui32LoRaSecs": 0, "ui32MqttSecs": 0},
+  "registers": 
+    [
+    {"ui16Addr": "0x0047", "ui8Size": 2, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 3600, "ui32SecsLoRa": 86400, "ui8DataType": 1, "ui8Decimals": 2, "fMultiplier": 1.0, "cUoM": "kWh", "ui8RegMap": 160, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "TotalEnergy", "stName": "Import Active Energy", "stGroup": "SYSTEM"},
+    {"ui16Addr": "0x0061", "ui8Size": 1, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 3, "ui8Decimals": 1, "fMultiplier": 0.1, "cUoM": "V", "ui8RegMap": 2, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsA", "stName": "Grid Voltage", "stGroup": "GRID"},
+    {"ui16Addr": "0x0064", "ui8Size": 1, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 3, "ui8Decimals": 2, "fMultiplier": 0.01, "cUoM": "A", "ui8RegMap": 6, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridAmpsA", "stName": "Grid Current", "stGroup": "GRID"},
+    {"ui16Addr": "0x0067", "ui8Size": 1, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 1, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 4, "ui8Decimals": 3, "fMultiplier": 0.001, "cUoM": "kW", "ui8RegMap": 9, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridWattsA", "stName": "Active Power", "stGroup": "GRID"},
+    {"ui16Addr": "0x0077", "ui8Size": 1, "ui8FcRead": 4, "ui8FcWrite": 0, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 3, "ui8Decimals": 2, "fMultiplier": 0.01, "cUoM": "Hz", "ui8RegMap": 1, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridFreq", "stName": "Grid Frequency", "stGroup": "GRID"}
+    ],
+  "messages": 
+    [
+    
+    ],
+  "HA": [
+  "homeassistant/sensor/ACR10R-D/TotalEnergy/config|{`name`: `ACR10R-D Import Active Energy`, `uniq_id`: `am_ACR10R-D_TotalEnergy`, `stat_t`: `$MQTT_ROOT$ACR10R-D/state`, `unit_of_meas`: `kWh`, `dev_cla`: `energy`, `stat_cla`: `total_increasing`, `val_tpl`: `{{ value_json.TotalEnergy }}`, `dev`: {`ids`: [`ACR10R-D`], `name`: `Acrel ACR10R-D`, `mdl`: `ACR10R-D`, `mf`: `Acrel`}}",
+  "homeassistant/sensor/ACR10R-D/GridVoltsA/config|{`name`: `ACR10R-D Grid Voltage`, `uniq_id`: `am_ACR10R-D_GridVoltsA`, `stat_t`: `$MQTT_ROOT$ACR10R-D/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsA }}`, `dev`: {`ids`: [`ACR10R-D`], `name`: `Acrel ACR10R-D`, `mdl`: `ACR10R-D`, `mf`: `Acrel`}}",
+  "homeassistant/sensor/ACR10R-D/GridAmpsA/config|{`name`: `ACR10R-D Grid Current`, `uniq_id`: `am_ACR10R-D_GridAmpsA`, `stat_t`: `$MQTT_ROOT$ACR10R-D/state`, `unit_of_meas`: `A`, `dev_cla`: `current`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridAmpsA }}`, `dev`: {`ids`: [`ACR10R-D`], `name`: `Acrel ACR10R-D`, `mdl`: `ACR10R-D`, `mf`: `Acrel`}}",
+  "homeassistant/sensor/ACR10R-D/GridWattsA/config|{`name`: `ACR10R-D Active Power`, `uniq_id`: `am_ACR10R-D_GridWattsA`, `stat_t`: `$MQTT_ROOT$ACR10R-D/state`, `unit_of_meas`: `W`, `dev_cla`: `power`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridWattsA }}`, `dev`: {`ids`: [`ACR10R-D`], `name`: `Acrel ACR10R-D`, `mdl`: `ACR10R-D`, `mf`: `Acrel`}}",
+  "homeassistant/sensor/ACR10R-D/GridFreq/config|{`name`: `ACR10R-D Grid Frequency`, `uniq_id`: `am_ACR10R-D_GridFreq`, `stat_t`: `$MQTT_ROOT$ACR10R-D/state`, `unit_of_meas`: `Hz`, `dev_cla`: `frequency`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridFreq }}`, `dev`: {`ids`: [`ACR10R-D`], `name`: `Acrel ACR10R-D`, `mdl`: `ACR10R-D`, `mf`: `Acrel`}}"
+]
+}

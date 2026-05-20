@@ -1,0 +1,26 @@
+{
+  "slug": "TS63A-1",
+  "ver": "4.17",
+  "rev": "0",
+  "patch": "0",
+  "device": {"cClass": "M", "eType": 0, "cUserName": "Fronius TS63A-1", "cMake": "Fronius", "cModel": "TS63A-1", "cAlias": "TS63A1", "cSerialNo": "", "ui8SlaveId": 1, "ui16Baud": 9600, "ui16TTL_Secs": 300, "ui32MaxSolar": 0, "ui32MaxUps": 0, "ui32MaxGrid": 0, "ui32LoRaSecs": 0, "ui32MqttSecs": 0},
+  "registers": 
+    [
+    {"ui16Addr": "0x2000", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 16, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 1, "ui8Decimals": 3, "fMultiplier": 0.001, "cUoM": "V", "ui8RegMap": 2, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridVoltsA", "stName": "Line Voltage", "stGroup": "GRID"},
+    {"ui16Addr": "0x2002", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 16, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 25, "ui8DataType": 1, "ui8Decimals": 3, "fMultiplier": 0.001, "cUoM": "A", "ui8RegMap": 6, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridAmpsA", "stName": "Line Current", "stGroup": "GRID"},
+    {"ui16Addr": "0x2004", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 16, "ui8Access": 2, "bLookup": 0, "bSigned": 1, "ui8Encoding": 0, "ui32SecsMqtt": 5, "ui32SecsLoRa": 300, "ui8DataType": 2, "ui8Decimals": 3, "fMultiplier": 0.001, "cUoM": "W", "ui8RegMap": 9, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridWattsA", "stName": "Active Power Flow", "stGroup": "GRID"},
+    {"ui16Addr": "0x2008", "ui8Size": 1, "ui8FcRead": 3, "ui8FcWrite": 16, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 1, "ui32SecsLoRa": 20, "ui8DataType": 3, "ui8Decimals": 2, "fMultiplier": 0.01, "cUoM": "Hz", "ui8RegMap": 1, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "GridFreq", "stName": "Grid Frequency", "stGroup": "GRID"},
+    {"ui16Addr": "0x2009", "ui8Size": 2, "ui8FcRead": 3, "ui8FcWrite": 16, "ui8Access": 2, "bLookup": 0, "bSigned": 0, "ui8Encoding": 0, "ui32SecsMqtt": 3600, "ui32SecsLoRa": 86400, "ui8DataType": 1, "ui8Decimals": 0, "fMultiplier": 1.0, "cUoM": "Wh", "ui8RegMap": 162, "ui8PollLoRa": 0, "ui8PollMqtt": 0, "stAlias": "CumGridExp", "stName": "Total Energy Exported", "stGroup": "SYSTEM"}
+    ],
+  "messages": 
+    [
+    ],
+  "HA":
+    [
+    "homeassistant/sensor/$AM_ID$/TS63A-1/GridVoltsA/config|{`name`: `TS63A-1 Line Voltage`, `uniq_id`: `am_$AM_ID$_TS63A-1_GridVoltsA`, `stat_t`: `$MQTT_ROOT$$AM_ID$/TS63A-1/state`, `unit_of_meas`: `V`, `dev_cla`: `voltage`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridVoltsA }}`, `dev`: {`ids`: [`$AM_ID$_TS63A-1`], `name`: `Fronius TS63A-1`, `mdl`: `TS63A-1`, `mf`: `Fronius`}}",
+    "homeassistant/sensor/$AM_ID$/TS63A-1/GridAmpsA/config|{`name`: `TS63A-1 Line Current`, `uniq_id`: `am_$AM_ID$_TS63A-1_GridAmpsA`, `stat_t`: `$MQTT_ROOT$$AM_ID$/TS63A-1/state`, `unit_of_meas`: `A`, `dev_cla`: `current`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridAmpsA }}`, `dev`: {`ids`: [`$AM_ID$_TS63A-1`], `name`: `Fronius TS63A-1`, `mdl`: `TS63A-1`, `mf`: `Fronius`}}",
+    "homeassistant/sensor/$AM_ID$/TS63A-1/GridWattsA/config|{`name`: `TS63A-1 Active Power Flow`, `uniq_id`: `am_$AM_ID$_TS63A-1_GridWattsA`, `stat_t`: `$MQTT_ROOT$$AM_ID$/TS63A-1/state`, `unit_of_meas`: `W`, `dev_cla`: `power`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridWattsA }}`, `dev`: {`ids`: [`$AM_ID$_TS63A-1`], `name`: `Fronius TS63A-1`, `mdl`: `TS63A-1`, `mf`: `Fronius`}}",
+    "homeassistant/sensor/$AM_ID$/TS63A-1/GridFreq/config|{`name`: `TS63A-1 Grid Frequency`, `uniq_id`: `am_$AM_ID$_TS63A-1_GridFreq`, `stat_t`: `$MQTT_ROOT$$AM_ID$/TS63A-1/state`, `unit_of_meas`: `Hz`, `dev_cla`: `frequency`, `stat_cla`: `measurement`, `val_tpl`: `{{ value_json.GridFreq }}`, `dev`: {`ids`: [`$AM_ID$_TS63A-1`], `name`: `Fronius TS63A-1`, `mdl`: `TS63A-1`, `mf`: `Fronius`}}",
+    "homeassistant/sensor/$AM_ID$/TS63A-1/CumGridExp/config|{`name`: `TS63A-1 Total Energy Exported`, `uniq_id`: `am_$AM_ID$_TS63A-1_CumGridExp`, `stat_t`: `$MQTT_ROOT$$AM_ID$/TS63A-1/state`, `unit_of_meas`: `kWh`, `dev_cla`: `energy`, `stat_cla`: `total_increasing`, `val_tpl`: `{{ value_json.CumGridExp }}`, `dev`: {`ids`: [`$AM_ID$_TS63A-1`], `name`: `Fronius TS63A-1`, `mdl`: `TS63A-1`, `mf`: `Fronius`}}"
+    ]
+}
