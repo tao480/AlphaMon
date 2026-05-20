@@ -18,7 +18,7 @@ Whilst we don't share the underlying firmware for security reasons, we do attemp
 You can read more about The AlphaMon Platform on our official website at https://AlphaMon.net
 
 Whilst the firmware is currently tied to the Heltec ESP32 LoRa V3 sub-board we expect to support other OEM ESP32 sub-boards in the near future.
-Unlike many SaaS offerings, it is the ESP32 sub-board that joins the AlphaMon ecosystem. Each registered ESP32 receives automatic firmware updates via the built-in Over-The-Air (OTA) update service; much like your cell phone's automatic update service.
+Unlike many SaaS offerings, it is the ESP32 sub-board that joins the AlphaMon ecosystem. Each registered ESP32 receives automatic firmware updates via the built-in Over-The-Air (OTA) update service; much like your cell phone's automatic update service.  You can find the technical specifications of the Heltec board here: https://wiki.heltec.org/docs/devices/open-source-hardware/esp32-series/lora-32/wifi-lora-32-v3/
 
 If you have an existing Heltec ESP32 LoRa V3 sub-board you can register it in The AlphaMon Platform ecosystem for as little as US$50 per device as an introductory offer, which includes a lifetime subscription.  Other participation plans are available for OEMs and systems integrators. Contact us for more details, clearly stating your preferences, volumes and other requirements for a quotation.
 
