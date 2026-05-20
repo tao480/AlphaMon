@@ -17,5 +17,5 @@ See https://alphamon.net/home/services/ for a more detailed description of the f
 - **Event Logging**: The Event Logger service controls how status, warning and error messages are published and displayed across various interfaces including Serial (USB) and UTP messaging.  The reporting levels are user-defined by the Config File settings.
 
 ## Infrastructure Directory Structure
-- `/devices`: Hosts current versions of supported DDF assets.
+- `/assets/devices/DDFs`: Hosts current versions of supported Device Definition File (DDF) assets.
 - `/src`: Source code and utilities which may assist in managing AlphaMon devices and networks.
