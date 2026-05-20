@@ -1,8 +1,8 @@
 # The AlphaMon Project Firmware (V4.17)
 
 ## System Overview
-AlphaMon is an edge-based, IoT data collection and forwarding system optimised for enterprise-grade Renewable Energy Demand Management applications.
-The AlphaMon's hardware is based on cost effective, dual-core ESP32-S3 processors and a firmware application that bridges renewable energy assets (inverters, batteries, smart meters) to local automation hubs such as Home Assistant, via MQTT and long-range comms using built-in wireless (LoRa) MESH networks for least-cost, last-mile telemetry where WiFi or WAN connectivity isn't readily available.
+AlphaMon is an IoT, edge-based data collection and forwarding system optimised for enterprise-grade Energy Demand Management and similar applications.
+The AlphaMon's hardware is based on cost effective, dual-core ESP32-S3 processors and firmware that bridges grid and renewable energy assets (inverters, batteries, smart meters) to local automation hubs such as Home Assistant, via USB Serial ports, WiFi, MQTT message brokers and long-range (LoRa) wireless MESH networks for least-cost, last-mile telemetry where WiFi or WAN connectivity isn't readily available.
 
 ### Core Software Services
 See https://alphamon.net/home/services/ for a more detailed description of the following services:
