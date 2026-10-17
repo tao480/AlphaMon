@@ -129,7 +129,7 @@ enum eRegRole : uint8_t
 
   //Temperature Measurement
   TempC         = 170,  //Temperature Celsius
-  TempF         = 171,  //Temp Farenhight
+  TempF         = 171,  //Temp Fahrenheit
   
   //Pseudo Registers
   CalcSolarWatts = 180,  //Total Solar Watts (calculated)
