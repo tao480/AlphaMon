@@ -1,15 +1,18 @@
 Architecture Overview
 
 Home Assistant's (HA) "MQTT Discovery" is an automation feature that automatically finds, configures, and adds compatible smart devices and services to your Home Assistant dashboard. 
-Instead of manually typing in IP addresses or editing raw yaml files, the HA Discovery subsystem handles setup for you which greatly simplifies the setup experience.
+Instead of manually typing in IP addresses or editing raw YAML files, the HA Discovery subsystem handles setup for you which greatly simplifies the setup experience.
 
-Your AlphaMon device aids HA's Discovery process by publishing specially formatted MQTT data packets to predefined HA addresses.  These data packets tell HA where to find the your AlphaMon's data and how it is formatted.
+Your AlphaMon device aids HA's Discovery process by publishing specially formatted links to your selected MQTT Broker (such as Solargy's MQTT server located at https://mqtt.solargy.com.au, a public MQTT server or your own server built with tools such as MQTT Mosquitto).
+
+These links tell HA where to find the your AlphaMon's data and how it is formatted.
 By default, HA expects the Discovery packets to be published to the MQTT Broker's root directory at #homeassistant. However, this architecture doesn't readily support multiple user groups sharing a single broker service so some additional configuration steps are typically required.
-The following sections describe how to install HA on a Linux server running the Aphache2 web server and configure it to expose its Dashboard via private or public web pages. 
-We assume the web browser will be running on a Windows deskop PC for the sake of this example, but you can run the broswer on any suitable device such as a tablet or smart phone. 
+
+The following sections describe how to install HA on a Linux server running the Aphache2 web server and configure it to expose its Dashboard via private or public web pages. We assume the web browser will be running on a Windows desktop PC for the sake of this example, but you can run the browser on any suitable device such as a tablet or smart phone. 
 
 The following AlphaMon/HA system setup assumes a multi-tier network topology to separate your LAN from IoT telemetry. 
 Note: When deploying HA on an existing Linux host that also hosts the primary MQTT broker, a network isolation layer is required and this is discussed later in this tutorial.
+
 For this discussion we'll be assuming the following network architecture, which includes the creation of a KVM hypervisor on the Linux server to host the HA application:
 
 [ LAN Subnet: 10.1.1.0/24 ]          [ Host OS: Ubuntu (10.1.1.84) ]      [ KVM Private Network ]
