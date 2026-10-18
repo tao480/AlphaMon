@@ -9,7 +9,8 @@ that have the same Role number.
 
 Note: The Role number doesn't indicate anything other than the primary purpose of a register. For example, it isn't
 intended to tell us anything about the default sign of the value, the size of the register, the data type, etc.
-This extra register information can be found in other DDF values.
+This extra register information can be found in other DDF values such as cUom (Unit of Measure; V, KwH, A, W, ect.) and
+fMultiplier (which defaults to 1 but can be used to scale the output or to flip the sign of the read value).  
 
 Where do Roles appear?
 You'll find the Role numbers assigned to individual registers in your Data Definition Files (DDFs).
