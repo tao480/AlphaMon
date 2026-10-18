@@ -41,3 +41,4 @@ See https://alphamon.net/home/services/ for a more detailed description of the f
 - `/assets/devices/DDFs`: Hosts current versions of supported Device Definition File (DDF) assets.
 - `/src`: Source code and utilities which may assist in managing AlphaMon devices and networks.
 - `/configs`: Information on Configuration File settings and Config File management.
+- `/docs/architecture`: How hubs, the broker, the AlphaMon server and the phone app fit together: MQTT topics, settings sync and phone pairing.
