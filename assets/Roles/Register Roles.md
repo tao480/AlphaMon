@@ -1,6 +1,6 @@
 Introduction:
 The AlphaMon Platform uses pre-defined Roles to define what type of data is stored in each Modbus register.
-Each Role is a numeric, C++ enum value (unsigned integer, 8 bits).
+Each unique Role is defined as a numeric, C++ enum value (unsigned integer, 8 bits).
 
 Why do we need Roles?
 Roles are a memory efficient way of describing what the register does and holds.
@@ -11,6 +11,11 @@ Note: The Role number doesn't indicate anything other than the primary purpose o
 intended to tell us anything about the default sign of the value, the size of the register, the data type, etc.
 This extra register information can be found in other DDF values such as cUom (Unit of Measure; V, KwH, A, W, etc.) and
 fMultiplier, which defaults to 1.0 but can be used to scale the output or to flip the sign of the read value.  
+
+Note: To ensure data from various Roles can be correctly aggregated across devices, it is important to have consistancy 
+regarding registers which can have either a positive or negative sign. DDFs and The AlphaMon firmware follow these conventions;
+  * grid power: +ve = import, -ve = export;
+  * battery power: +ve = discharge, -ve = charge
 
 Where do Roles appear?
 You'll find the Role numbers assigned to individual registers in your Data Definition Files (DDFs).
