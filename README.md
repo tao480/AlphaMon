@@ -4,15 +4,21 @@
 AlphaMon is an IoT, edge-based data collection and forwarding system optimised for enterprise-grade Energy Demand Management and similar applications.
 The AlphaMon's hardware is based on cost effective, dual-core ESP32-S3 processors and firmware that bridges grid and renewable energy assets (inverters, batteries, smart meters) to local automation hubs such as Home Assistant, via USB Serial ports, WiFi, MQTT message brokers and long-range (LoRa) wireless MESH networks for least-cost, last-mile telemetry where WiFi or WAN connectivity isn't readily available.
 
-Solargy has developed a demonstration 95mm x 95mm PCB which hosts a Heltec ESP32 LoRa V3 sub-board which runs The AlphaMon Platform firmware. It has been designed to fit into a standard 108mm (L) x 108mm (W) x 75mm (H) IP67-rated electrical enclosure for outdoor mounting. We've also designed proof-of-concept, 3D printed enclosures for indoor mounting.
-The current PCB design includes the following features:
+Solargy has developed a proof-of-concept (PoC) 95mm x 95mm PCB which hosts a Heltec ESP32 LoRa V3 sub-board which runs The AlphaMon Platform firmware. The PoC is designed to fit into a standard 108mm (L) x 108mm (W) x 75mm (H) IP67-rated electrical enclosure for outdoor mounting. We've also designed a 3D printed enclosures for indoor mounting.
+
+The current PoC PCB design includes the following features:
 - **An independent 12V power supply**: Allows the PCB to be powered from a standard wall socket plug-pack power supply. 
 - **An RJ-45 Modbus socket**: Allows quick and easy connections to many inverters and energy storage systems.
 - **An RS-485 module**: Which implements the Modbus communication and electrical standards.
 - **A microSD Card sub-board**: The optional microSD card can simplify loading and testing configuration and device definitions (DDFs).
 - **A voltage controlled relay driver**: Which allows the AlphaMon to switch external electrical loads via a Solid State Relay (SSR).
 
-###Open Architecture
+## M5Stack Tab5 code port
+The AlphaMon Platform is currently being ported to the M5Stack Tab5; a fully featured tablet device developed by M5Stack group. 
+The Tab5 includes a 5" color touch screen, camera, microphone, speaker and amplifier, multiple I/O ports and add-ons, in an aesthetically pleasing enclosure.  It can be table or wall mounted and has an optional Lithium battery that enables mobile deployment.
+The Tab5 can be paired with a "headless" AlphaMon such as the Heltec ESP32 LoRa V3 to create a local mesh network using your Wireless LAN and/or long-range LoRa wireless for coverage up to 12km (or more, with suitable hardware).
+
+##Open Architecture
 AlphaMon is an Open Architecture Platform that allows software developers, hardware designers and end-users to join the AlphaMon ecosystem.
 Whilst we don't share the underlying firmware for security reasons, we do attempt to make it as easy as possible for any interested parties to participate in and enhance the platform offerings, including custom devices based on the AlphaMon's features and services.
 You can read more about The AlphaMon Platform on our official website at https://AlphaMon.net
@@ -40,5 +46,6 @@ See https://alphamon.net/home/services/ for a more detailed description of the f
 ## Infrastructure Directory Structure
 - `/assets/devices/DDFs`: Hosts current versions of supported Device Definition File (DDF) assets.
 - `/src`: Source code and utilities which may assist in managing AlphaMon devices and networks.
+- 
 - `/configs`: Information on Configuration File settings and Config File management.
 - `/docs/architecture`: How hubs, the broker, the AlphaMon server and the phone app fit together: MQTT topics, settings sync and phone pairing.
