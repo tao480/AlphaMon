@@ -124,6 +124,7 @@ Each register is one line and one Json object. Field order is non-critical.
 | `ui8Decimals` | Digits shown after the decimal point in reported values. |
 | `fMultiplier` | Scale applied to the raw number. `0.1` turns tenths of a volt into volts. Default = 1.0; use -1.0 to reverse the sign. |
 | `cUoM` | Unit text: `V`, `A`, `W`, `Hz`, `kWh`, `%`, `VA`, `VAr`, `PF` and so on. |
+| 'ui8Role' | Default = 0 (unassigned), or one of the values listed in Register Roles.cpp |
 | `ui8RegMap` | Role code. Refer tote Register Roles section for the stock values. |
 | `ui8PollLoRa` | Bitmap: Pub reg via LoRa? 0=no else POLL_ENABLE_TX (1) or POLL_ENABLE_RX (2) |
 | `ui8PollMqtt` | Bitmap: Pub reg via MQTT? 0=no else POLL_ENABLE_TX (1) or POLL_ENABLE_RX (2) |
@@ -133,6 +134,10 @@ Each register is one line and one Json object. Field order is non-critical.
 
 Notes: 
 - The first register listed in the DDF is used to test if the device is physically connected.
+- Be conservative when selecting values for ui32SecsLoRa because each LoRx transmission for a register can take up to 2.5 seconds to complete.
+- Registers that are critical for detecting fast-moving events, such as voltage spikes, need sub-second polling.
+- To force sub-second polling, set ui8PollMqtt=1 and ensure the register is allocated a value Role number (ui8Role).
+- AlphaMon uses High Freq. polling for critical registers requiring sub-second (~20 reads/sec) response times for Expression Evaluator responses.
 
 ## 6. `messages` array
 Used to convert bit-mapped register values to text messages. For example, a register with an address of 0x406C that has a read value of 0x02 that corresponds
