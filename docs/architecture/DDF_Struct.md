@@ -15,14 +15,14 @@ is part of the mesh doesn't have direct Internet and MQTT access, you can config
 remote node's data to MQTT.
 
 To implement the data relay functionality, simply edit the CONFIG_LOAD parameter of a node which has Internet access to include the matching DDF name
-of the remote Modbus device that you wsh to relay.  This allows the local AlphaMon with Internet access to build the necessary internal memory structures 
+of the remote Modbus device that you wish to relay.  This allows the local AlphaMon with Internet access to build the necessary internal memory structures 
 that parallel the data collection activities of the remote AlphaMon device.
 
 Whilst you can create your own DDF files using any popular text editor, The AlphaMon Platform's ecosystem has pre-configured DDF files available for
 some popular Modbus devices. These pre-configured DDFs are stored on an Over-the_Air (OTA) server that is automatically contacted by each AlphaMon 
 during boot-up, provided the AlphaMon has Internet access available via its built-in WiFi hardware.
 
-This remainder of this document descibes the prescribed structure of a DDF file.
+This remainder of this document describes the prescribed structure of a DDF file.
 
 ## 1. File and naming
 
@@ -42,7 +42,14 @@ Each DDF consists of 5 parts:
   2. The "device" section, describing the device to be connected
   3. The "registers" section, listing each of the Modbus registers to be read, their size, name, role, etc.
   4. The "messages" section which optionally lists the expanded values of any bit-mapped registers.
-  5. The optional "HA" section which lists the HomeAssistant Discovery links for selected registers.
+  5. The optional "HA" section which lists the Home Assistant Discovery links for selected registers.
+
+Lower case field name prefixes are used to signify the data types, for example:
+'c' a fixed-length character array
+'st' a variable-length string
+'ui8' an unsigned, 8 bit integer
+'ui16' an unsigned, 16 bit integer
+'e' a C++ enum (a fixed integer value)
 
 For example:
 
