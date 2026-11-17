@@ -1,0 +1,13 @@
+// PLUGIN01.plg - DDS6619 Live Grid Voltage PoC
+// Declarative LVGL layout for M5Stack Tab5 VIEW_PLUGIN canvas (1280 x 684 px)
+//
+// Directive Syntax:
+//   TITLE, <Button Label>
+//   BOX,   <X>, <Y>, <Width>, <Height>, <HexColor>, "<Header Text>"
+//   BAR,   <X>, <Y>, <Width>, <Height>, <HexColor>, EXPN:<Index>, <Min>, <Max>
+//   VAL,   <X>, <Y>, <Width>, <Height>, <HexColor>, "<Text with {EXPN:<Index>}>"
+
+TITLE, GRID VOLTS
+BOX,   20,  16, 1240, 640, 0x1E293B, "DDS6619 SMART METER - GRID VOLTAGE"
+BAR,  140, 210, 1000, 110, 0x00FF00, EXPN:2, 200, 260
+VAL,  140, 380, 1000,  90, 0xFFFFFF, "Grid Voltage: {EXPN:2} V"
