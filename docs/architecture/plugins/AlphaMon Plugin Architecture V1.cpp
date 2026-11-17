@@ -303,3 +303,87 @@ static uint8_t _plg_parseExpn(const char* cpToken)
   return (uint8_t)atoi(p + 5);
   }
 
+// ===========================================================================
+// W3C / Wikipedia Web Colors (Single Source of Truth via X-Macro)
+// ===========================================================================
+// Format: X(Name, Hex24)
+#define WEB_COLOR_LIST(X) \
+  X(White,          0xFFFFFF) \
+  X(Silver,         0xC0C0C0) \
+  X(Gray,           0x808080) \
+  X(Black,          0x000000) \
+  X(Red,            0xFF0000) \
+  X(Maroon,         0x800000) \
+  X(Yellow,         0xFFFF00) \
+  X(Olive,          0x808000) \
+  X(Lime,           0x00FF00) \
+  X(Green,          0x008000) \
+  X(Aqua,           0x00FFFF) \
+  X(Cyan,           0x00FFFF) \
+  X(Teal,           0x008080) \
+  X(Blue,           0x0000FF) \
+  X(Navy,           0x000080) \
+  X(Fuchsia,        0xFF00FF) \
+  X(Magenta,        0xFF00FF) \
+  X(Purple,         0x800080) \
+  X(Orange,         0xFFA500) \
+  X(DarkOrange,     0xFF8C00) \
+  X(MidnightBlue,   0x191970) \
+  X(DarkGreen,      0x006400) \
+  X(DarkSlateGray,  0x2F4F4F) \
+  X(DarkCyan,       0x008B8B) \
+  X(SlateGray,      0x708090) \
+  X(LightSlateGray, 0x778899) \
+  X(DimGray,        0x696969) \
+  X(DarkGray,       0xA9A9A9) \
+  X(LightGray,      0xD3D3D3) \
+  X(Gold,           0xFFD700) \
+  X(Crimson,        0xDC143C) \
+  X(DodgerBlue,     0x1E90FF) \
+  X(RoyalBlue,      0x4169E1) \
+  X(SteelBlue,      0x4682B4) \
+  X(TrackDarkGray,  0x333333) \
+  X(BtnActiveTop,   0x546E7A) \
+  X(BtnActiveBase,  0x263238) \
+  X(BtnActiveEdge,  0x90A4AE) \
+  X(BtnSpareBase,   0x141A1D) \
+  X(BtnSpareEdge,   0x37474F)
+
+// 1. Auto-generate COLOR_<Name> constants for C++ code
+enum WebColorHex : uint32_t {
+  #define X_COLOR_ENUM(name, hex) COLOR_##name = hex,
+  WEB_COLOR_LIST(X_COLOR_ENUM)
+  #undef X_COLOR_ENUM
+};
+
+// 2. Lookup table struct for JSON .plg colour names
+struct WebColorEntry_t {
+  const char* cpName;
+  uint32_t    ui32Hex;
+};
+
+static const WebColorEntry_t sWebColors[] = {
+  #define X_COLOR_ROW(name, hex) { #name, hex },
+  WEB_COLOR_LIST(X_COLOR_ROW)
+  #undef X_COLOR_ROW
+};
+static const uint16_t ui16WebColorCount = sizeof(sWebColors) / sizeof(sWebColors[0]);
+
+// 3. Helper: Resolves either a Web Color name ("DodgerBlue") or hex ("0x1E90FF" / "#1E90FF")
+static inline uint32_t Color_Parse(const char* cpColorStr)
+  {
+  if (cpColorStr == nullptr || cpColorStr[0] == '\0')
+    return COLOR_White;
+  if (cpColorStr[0] == '#')
+    return (uint32_t)strtoul(cpColorStr + 1, nullptr, 16);
+  if (strncmp(cpColorStr, "0x", 2) == 0 || strncmp(cpColorStr, "0X", 2) == 0)
+    return (uint32_t)strtoul(cpColorStr, nullptr, 16);
+
+  for (uint16_t i = 0; i < ui16WebColorCount; i++)
+    {
+    if (strcasecmp(cpColorStr, sWebColors[i].cpName) == 0)
+      return sWebColors[i].ui32Hex;
+    }
+  return COLOR_White;
+  }
+
