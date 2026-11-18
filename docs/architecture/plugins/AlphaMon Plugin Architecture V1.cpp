@@ -32,6 +32,25 @@ bool EE_IsOperator(const RpnBinStack_t* spStep);
 void EE_PrintInfo(const ExpnInfo_t& sExpnInfo);
 void EE_Cleanup();
 
+//File Handling functions
+//Note: If bool bSdCard is false then the assumption is the file is on internal SPIFFS
+bool File_Exists(char* cpFileName, bool bOnSdCard);
+bool File_WriteBuff(char* cpDestPath, const char* cpSourceBuffer, bool bDestOnSD, bool bSilent);
+char* File_NameFix(char* cpFileName, bool bOnSdCard, bool bSilent);
+bool File_Sync(char* cpFileName);
+File File_Open(const char* cFunc, char *cpFileName, char *cMode, bool bOnSdCard);
+char* File_BuildName(char *cpFileBuff, uint8_t ui8BuffLen, const char *cpFileName, char *cpFileExtent);
+uint8_t File_Newer(const char* cFunc, char* cpFileOne, bool bOneOnSD, char* cpFileTwo, bool bTwoOnSD);
+bool File_DateTime(File oWorkFile, char* cpBuff, uint8_t ui8BuffLen);
+bool File_Create(char* cpFileName, const char* cpSourceBuffer, bool bDestOnSD);
+bool File_Copy(char* cpSrcPath, bool bSourceOnSD, char* cpDestPath, bool bDestinationOnSD, bool bSilent);
+bool File_OnSdCard(const char *cpFileName, bool bOnSdCard);
+void File_NamePrint(const char* cpMessage, const char* cpFileName, bool bOnSdCard, bool bToLog);
+bool File_GetVer(char* cpFileName, bool bOnSD, char* cpSlug, int& iVer, int& iRev, int& iPatch);
+bool File_Remove(char* cpFileName, bool bOnSdCard, bool bSilent);
+bool File_DirList(bool bSdCard, const char *cpBasePath);
+
+
 //Metadata for a compiled EE expression
 // NOTE: The Hi Bit of ui8EDT is used to signal the last value on the RPN stack. It must
 // be cleared to reveal the underlying data type of the result.
